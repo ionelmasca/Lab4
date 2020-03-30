@@ -32,3 +32,23 @@ int Medicament::getterPrice()
 {
 	return price;
 }
+
+void Medicament::setterName(string a)
+{
+	name = a;
+}
+
+void Medicament::setterMenge(int a)
+{
+	menge = a;
+}
+
+void Medicament::setterConcentration(int a)
+{
+	concentration = a;
+}
+
+void Medicament::setterPrice(int a)
+{
+	price = a;
+}
