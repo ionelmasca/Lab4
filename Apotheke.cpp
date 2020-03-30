@@ -225,3 +225,21 @@ void Apotheke::sortare_pret()
 		i++;
 	}
 }
+
+Medicament Apotheke::getter_f(string a)
+{
+	int i = 0;
+	while (i < v.size())
+	{
+		if (v[i].getterName() == a)
+		{
+			return v[i];
+		}
+		i++;
+	}
+}
+
+string Apotheke::getterLastMedicamentName()
+{
+	return v[v.size() - 1].getterName();
+}
