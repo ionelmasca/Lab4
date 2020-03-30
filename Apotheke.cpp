@@ -181,3 +181,47 @@ void Apotheke::display_certain_medicamente(string a)
 		}
 	}
 }
+
+
+void Apotheke::under_menge()
+{
+	int x;
+	cout << "Introduceti: ";
+	cin >> x;
+	int i = 0;
+	while (i < v.size())
+	{
+		if (v[i].getterMenge() < x)
+		{
+			cout << v[i].getterName() << " " << v[i].getterConcentration() << " " << v[i].getterMenge() << " " << v[i].getterPrice() << endl;
+		}
+		i++;
+	}
+}
+
+void Apotheke::delete_last_medicament()
+{
+	v.pop_back();
+}
+
+void Apotheke::sortare_pret()
+{
+	Medicament aux;
+	int j;
+	int i = 0;
+	while (i < v.size() - 1)
+	{
+		j = i + 1;
+		while (j < v.size())
+		{
+			if (v[i].getterPrice() > v[j].getterPrice())
+			{
+				aux = v[j];
+				v[j] = v[i];
+				v[i] = aux;
+			}
+			j++;
+		}
+		i++;
+	}
+}
