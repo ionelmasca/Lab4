@@ -97,4 +97,87 @@ void Apotheke::sort_medicament(vector<Medicament>a)
 	display(a);
 }
 
+void sortare(vector<Medicament>a)
+{
+	Medicament aux;
+	int j;
+	int i = 0;
+	while (i < a.size() - 1)
+	{
+		j = i + 1;
+		while (j < a.size())
+		{
+			if (a[i].getterName() > a[j].getterName())
+			{
+				aux = a[j];
+				a[j] = a[i];
+				a[i] = aux;
+			}
+			j++;
+		}
+		i++;
+	}
+	display(a);
+}
 
+void Apotheke::display_certain_medicamente(string a)
+{
+	if (a == "")
+	{
+		sort_medicament(v);
+	}
+	else
+	{
+		int longa = 0;
+		while (a[longa] != '\0')
+		{
+			longa++;
+		}
+
+		vector<Medicament>l;
+		int i = 0;
+		while (i < v.size())
+		{
+			string x = v[i].getterName();
+
+			int longx = 0;
+			while (x[longx] != '\0')
+			{
+				longx++;
+			}
+
+			if (longx < longa)
+			{
+				int gdgefn = 0;
+			}
+			else
+			{
+				int j = 0;
+
+				while (j < longx)
+				{
+					int k = 0;
+					while (x[j] == a[k] && longa < longx)
+					{
+						k++;
+						j++;
+					}
+					if (k == longa)
+					{
+						l.push_back(v[i]);
+					}
+					j++;
+				}
+			}
+			i++;
+		}
+		if (l.size() > 0)
+		{
+			sortare(l);
+		}
+		else
+		{
+			cout << "Nu sunt medicamente";
+		}
+	}
+}
