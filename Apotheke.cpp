@@ -63,3 +63,38 @@ void Apotheke::display_medicamente()
 	}
 }
 
+void display(vector<Medicament>a)
+{
+	int i = 0;
+	while (i < a.size())
+	{
+		cout << a[i].getterName() << " " << a[i].getterConcentration() << " " << a[i].getterMenge() << " " << a[i].getterPrice() << endl;
+		i++;
+	}
+}
+
+void Apotheke::sort_medicament(vector<Medicament>a)
+{
+
+	Medicament aux;
+	int j;
+	int i = 0;
+	while (i < a.size() - 1)
+	{
+		j = i + 1;
+		while (j < a.size())
+		{
+			if (a[i].getterName() > a[j].getterName())
+			{
+				aux = a[j];
+				a[j] = a[i];
+				a[i] = aux;
+			}
+			j++;
+		}
+		i++;
+	}
+	display(a);
+}
+
+
