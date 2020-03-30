@@ -38,3 +38,28 @@ void Apotheke::add_medicament(Medicament a)
 {
 	v.push_back(a);
 }
+
+void Apotheke::delete_medicament(string a)
+{
+	int i = 0;
+	while (i < v.size())
+	{
+		if (v[i].getterName() == a)
+		{
+			v.erase(v.begin() + i);
+			return;
+		}
+		i++;
+	}
+}
+
+void Apotheke::display_medicamente()
+{
+	int i = 0;
+	while (i < v.size())
+	{
+		cout << v[i].getterName() << " " << v[i].getterConcentration() << " " << v[i].getterMenge() << " " << v[i].getterPrice() << endl;
+		i++;
+	}
+}
+
